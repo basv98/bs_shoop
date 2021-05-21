@@ -14,10 +14,9 @@ class ProductController extends Controller
             "product" => $product
         ]);
     }
-
-    public function pay(Request $request)
+    
+    public function finishPurchase()
     {
-        $factura = Product::find($request->id);
-        return view("pay");
+        return view("finish");
     }
 }

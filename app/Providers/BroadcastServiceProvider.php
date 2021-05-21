@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use Illuminate\Support\Facades\Broadcast;
 use Illuminate\Support\ServiceProvider;
+use App\Http\View\Composers\ProfileComposer;
+use Illuminate\Support\Facades\View;
 
 class BroadcastServiceProvider extends ServiceProvider
 {

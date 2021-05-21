@@ -23,6 +23,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        view()->composer('navbar', function ($view) {
+            $data = ["Hola"];
+            //pass the data to the view
+            $view->with('data', $data);
+        });
     }
 }

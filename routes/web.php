@@ -1,9 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ProductController;
+use Illuminate\Support\Facades\{Auth, Route};
+use App\Http\Controllers\{HomeController, InvoceController, PayController, ProductController};
 
 /*
 |--------------------------------------------------------------------------
@@ -24,4 +22,8 @@ Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('product/view/{id}', [ProductController::class, "view"])->name("viewProduct");
-Route::get('product/pay/{id}', [ProductController::class, "pay"])->name("payProduct");
+Route::post('product/invoce', [InvoceController::class, "createInvoce"])->name("createInvoce");
+Route::get('product/pay/{id}', [PayController::class, "index"])->name("payProduct");
+Route::post('product/pay', [PayController::class, "pay"])->name("pay");
+
+Route::get('product/finished', [ProductController::class, "finishPurchase"])->name("finished");
