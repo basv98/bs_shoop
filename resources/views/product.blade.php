@@ -26,11 +26,9 @@
                             <li data-bs-target="#carouselExampleDark" data-bs-slide-to="2"></li>
                         </ol>
                         <div class="carousel-inner">
-                            @foreach ($product->imagenes as $imagen)
-                                <div class="carousel-item active" data-bs-interval="10000">
-                                    <img src="{{ asset($imagen->url) }}" class="d-block w-100">
-                                </div>
-                            @endforeach
+                            <div class="carousel-item active" data-bs-interval="10000">
+                                <img src="{{ $product->imagen->get_image }}" class="d-block w-100">
+                            </div>
                         </div>
                         <a class="carousel-control-prev" href="#carouselExampleDark" role="button" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -66,8 +64,8 @@
                                     <div class="mb-3 col-md-6">
                                         <label for="cedula_cliente"
                                             class="form-label @error('cedula_cliente') is-invalid @enderror">Cédula</label>
-                                        <input type="text" class="form-control" maxlength="10" name="cedula_cliente" id="cedula_cliente"
-                                            placeholder="Número de documento">
+                                        <input type="text" class="form-control" maxlength="10" name="cedula_cliente"
+                                            id="cedula_cliente" placeholder="Número de documento">
                                         @error('cedula_cliente')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -78,7 +76,7 @@
                                         <label for="telefono_cliente"
                                             class="form-label @error('telefono_cliente') is-invalid @enderror">Teléfono</label>
                                         <input type="text" class="form-control" name="telefono_cliente"
-                                            id="telefono_cliente" placeholder="Teléfono" maxlength="10"> 
+                                            id="telefono_cliente" placeholder="Teléfono" maxlength="10">
                                         @error('telefono_cliente')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -88,8 +86,8 @@
                                     <div class="mb-3 col-md-6">
                                         <label for="correo_cliente"
                                             class="form-label @error('correo_cliente') is-invalid @enderror">Correo</label>
-                                        <input type="email" class="form-control" name="correo_cliente" id="correo_cliente" maxlength="20"
-                                            placeholder="Correo">
+                                        <input type="email" class="form-control" name="correo_cliente" id="correo_cliente"
+                                            maxlength="20" placeholder="Correo">
                                         @error('correo_cliente')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -159,7 +157,7 @@
                                 <p>{{ $comment->comment }}</p>
                             </blockquote>
                             <figcaption class="blockquote-footer">
-                                {{$comment->usuario->name}}
+                                {{ $comment->usuario->name }}
                             </figcaption>
                             <div class="d-inline-block">
                                 <p class="clasificacion">

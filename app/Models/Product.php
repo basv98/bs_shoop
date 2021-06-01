@@ -9,11 +9,11 @@ use App\Models\Image;
 class Product extends Model
 {
     use HasFactory;
-    protected $fillable = ["stock"];
+    protected $fillable = ["product_name", "category_id", "price", "stock", "description", "user_id"];
 
-    public function imagenes()
+    public function imagen()
     {
-        return $this->hasMany(Image::class, "product_id", "id");
+        return $this->belongsTo(Image::class, "id", "product_id");
     }
 
     public static function stock(int $product_id)
@@ -25,5 +25,4 @@ class Product extends Model
     {
         return $this->hasMany(Comment::class, "product_id", "id");
     }
-    
 }

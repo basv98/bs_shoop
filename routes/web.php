@@ -27,3 +27,6 @@ Route::get('product/pay/{id}', [PayController::class, "index"])->name("payProduc
 Route::post('product/pay', [PayController::class, "pay"])->name("pay");
 Route::get('product/finished', [ProductController::class, "finishPurchase"])->name("finished");
 Route::get('product/comment', [CommentController::class, "store"])->name("comment");
+
+Route::get('product/new', [ProductController::class, "viewNewProduct"])->name("newProduct");
+Route::post('product/new', [ProductController::class, "addProduct"])->name("addProduct");

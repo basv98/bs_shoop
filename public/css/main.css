@@ -1,7 +1,11 @@
+*{
+  box-sizing: border-box;
+}
+
 .border {
     border-style: solid;
     border-width: 1px;
-    border-radius: 15px;
+    border-radius: 30px;
     background-color: white;
   }
 
@@ -23,7 +27,8 @@
     display: none;
   }
   
-  label {
+  .clasificacion label {
+    font-size: 30px;
     color: grey;
   }
   
@@ -45,4 +50,31 @@
    font-size: 12px;
  }
 
- 
+ .container-image {
+   width: 100%;
+   height: 400px;
+ }
+
+ .container-image .load-image {
+   border:  1.5px dashed black; 
+   display: flex;
+   width: 80%;
+   height: 100%;
+   background-color: #eeeeee;
+   font-size: 80px;
+   align-items: center;
+ }
+
+ #contenedor-productos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+} 
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.img {
+  height: 170px;
+}

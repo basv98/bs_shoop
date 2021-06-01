@@ -1,14 +1,14 @@
 @extends('layout.app')
 @extends('layout.navbar')
 @section('content')
-    <section style="margin-top: 100px;">
+    <section style="margin-top: 40px;">
         <div class="container">
-            <div class="row">
+            <div class="row" id="contenedor-productos">
                 @foreach ($products as $product)
-                    <div class="col-3  m-auto border border-secondary cursor-pointer">
+                    <div class="col-sm-3 m-3 border border-secondary cursor-pointer">
                         <div class="img">
-                            <img src="{{ asset($product['product']->imagenes[0]->url) }}" class="rounded mx-auto d-block"
-                                style="width:100%">
+                            <img src="{{ $product['product']->imagen->get_image }}"
+                                class="rounded mx-auto d-block img-fluid" style="width:70%">
                         </div>
                         <div class="d-inline-block">
                             <p class="clasificacion">
@@ -34,7 +34,8 @@
                         <div class="d-grid gap-2 col-6 mx-auto">
                             <button type="button"
                                 onclick="window.location = '{{ route('viewProduct', ['id' => $product['product']->id]) }}'"
-                                class="btn btn-outline-dark m-3 bu">Comprar</button>
+                                class="btn btn-outline-dark m-3 bu">Comprar
+                            </button>
                         </div>
                     </div>
                 @endforeach
