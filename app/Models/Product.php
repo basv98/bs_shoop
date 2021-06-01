@@ -20,4 +20,10 @@ class Product extends Model
     {
         return self::find($product_id)->stock;
     }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class, "product_id", "id");
+    }
+    
 }

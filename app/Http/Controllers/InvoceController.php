@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\InvoceRequest;
 use App\Models\Invoce;
 use App\Models\Product;
-use Illuminate\Http\Request;
 
 class InvoceController extends Controller
 {

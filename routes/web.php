@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\{Auth, Route};
-use App\Http\Controllers\{HomeController, InvoceController, PayController, ProductController};
+use App\Http\Controllers\{CommentController, HomeController, InvoceController, PayController, ProductController};
 
 /*
 |--------------------------------------------------------------------------
@@ -25,5 +25,5 @@ Route::get('product/view/{id}', [ProductController::class, "view"])->name("viewP
 Route::post('product/invoce', [InvoceController::class, "createInvoce"])->name("createInvoce");
 Route::get('product/pay/{id}', [PayController::class, "index"])->name("payProduct");
 Route::post('product/pay', [PayController::class, "pay"])->name("pay");
-
 Route::get('product/finished', [ProductController::class, "finishPurchase"])->name("finished");
+Route::get('product/comment', [CommentController::class, "store"])->name("comment");

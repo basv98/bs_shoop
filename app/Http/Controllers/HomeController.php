@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\shop\Product as ShopProduct;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -22,12 +23,10 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(ShopProduct $product)
     {
-        $products = Product::all();
-
         return view('index', [
-            "products" => $products
+            "products" => $product->all()
         ]);
     }
 }
